@@ -33,6 +33,33 @@ local FindFirstChild = Instancenew("Part").FindFirstChild
 local tableremove = table.remove
 local tableinsert = table.insert
 
+-- // Silent Aim Vars
+getgenv().Aiming = {
+    Enabled = true,
+    ShowFOV = true,
+    FOVSides = 12,
+    FOVColour = Color3fromRGB(231, 84, 128),
+    VisibleCheck = true,
+    FOV = 60,
+    HitChance = 100,
+    Selected = LocalPlayer,
+    SelectedPart = nil,
+    TargetPart = {"Head", "HumanoidRootPart"},
+    Ignored = {
+        Teams = {
+            {
+                Team = LocalPlayer.Team,
+                TeamColor = LocalPlayer.TeamColor,
+            },
+        },
+        Players = {
+            LocalPlayer,
+            91318356
+        }
+    }
+}
+local Aiming = getgenv().Aiming
+
 -- // Show FOV
 local circle = Drawingnew("Circle")
 circle.Transparency = 1
