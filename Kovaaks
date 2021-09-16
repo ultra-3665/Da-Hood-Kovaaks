@@ -36,7 +36,6 @@ local tableinsert = table.insert
 -- // Silent Aim Vars
 getgenv().Aiming = {
     Enabled = true,
-
     ShowFOV = false,
     FOV = 60,
     FOVSides = 12,
@@ -65,32 +64,6 @@ getgenv().Aiming = {
     }
 }
 local Aiming = getgenv().Aiming
-
--- // Create circle
-local circle = Drawingnew("Circle")
-circle.Transparency = 1
-circle.Thickness = 2
-circle.Color = Aiming.FOVColour
-circle.Filled = false
-Aiming.FOVCircle = circle
-
--- // Update
-function Aiming.UpdateFOV()
-    -- // Make sure the circle exists
-    if not (circle) then
-        return
-    end
-
-    -- // Set Circle Properties
-    circle.Visible = Aiming.ShowFOV
-    circle.Radius = (Aiming.FOV * 3)
-    circle.Position = Vector2new(Mouse.X, Mouse.Y + GetGuiInset(GuiService).Y)
-    circle.NumSides = Aiming.FOVSides
-    circle.Color = Aiming.FOVColour
-
-    -- // Return circle
-    return circle
-end
 
 -- // Custom Functions
 local CalcChance = function(percentage)
