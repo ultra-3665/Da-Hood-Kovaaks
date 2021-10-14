@@ -98,7 +98,7 @@ local CalcChance = function(percentage)
     percentage = mathfloor(percentage)
 
     -- // Get the chance
-    local chance = mathfloor(Randomnew().NextNumber(Randomnew(), 0, 1) * 100) / 100
+    local chance = mathfloor(Randomnew().NextNumber(Randomnew(), 0, 1) * 105) / 105
 
     -- // Return
     return chance <= percentage / 100
