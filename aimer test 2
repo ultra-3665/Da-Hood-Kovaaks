@@ -382,13 +382,11 @@ function Aiming.GetClosestTargetPartToCursor(Character)
 end
 
 -- // Silent Aim Function
-local LowerTorso = mouse.Target.Parent:FindFirstChild('LowerTorso')
-if not LowerTorso then
-    LowerTorso = mouse.Target.Parent.Parent:FindFirstChild('LowerTorso')
-    announce('Silent Aim locked onto', SilentAimTarget, 3)
-else
-    RPGTarget = nil
-    announce('SilentAim unlocked', '', 3)
+local SilentAim = Instance.new('Tool', player.Backpack)
+        SilentAim.ToolTip = 'Click a player to rpg lock them'
+        SilentAim.CanBeDropped = false
+        SilentAim.RequiresHandle = false
+        SilentAim.Name = 'Rpg Lock'
 function Aiming.GetClosestPlayerToCursor()
     -- // Vars
     local TargetPart = nil
