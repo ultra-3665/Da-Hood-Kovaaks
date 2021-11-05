@@ -385,7 +385,10 @@ end
 local LowerTorso = mouse.Target.Parent:FindFirstChild('LowerTorso')
 if not LowerTorso then
     LowerTorso = mouse.Target.Parent.Parent:FindFirstChild('LowerTorso')
-end
+    announce('Silent Aim locked onto', SilentAimTarget, 3)
+else
+    RPGTarget = nil
+    announce('SilentAim unlocked', '', 3)
 function Aiming.GetClosestPlayerToCursor()
     -- // Vars
     local TargetPart = nil
