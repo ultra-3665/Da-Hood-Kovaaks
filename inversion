@@ -382,11 +382,6 @@ function Aiming.GetClosestTargetPartToCursor(Character)
 end
 
 -- // Silent Aim Function
-local SilentAim = Instance.new('Tool', player.Backpack)
-        SilentAim.ToolTip = 'Click a player to rpg lock them'
-        SilentAim.CanBeDropped = false
-        SilentAim.RequiresHandle = false
-        SilentAim.Name = 'Rpg Lock'
 function Aiming.GetClosestPlayerToCursor()
     -- // Vars
     local TargetPart = nil
